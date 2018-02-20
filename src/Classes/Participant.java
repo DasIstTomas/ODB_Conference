@@ -1,13 +1,13 @@
-package Classes;
+п»їpackage Classes;
 
 public class Participant {
 
-	private int id; // ИД участника
+	private int id; // РР” СѓС‡Р°СЃС‚РЅРёРєР°
 	int age;
-	String fullName; // ФИО
-	String participantType; // Тип участника
-	String degree; // Научная степень
-	private String country; // Страна
+	String fullName; // Р¤РРћ
+	String participantType; // РўРёРї СѓС‡Р°СЃС‚РЅРёРєР°
+	String degree; // РќР°СѓС‡РЅР°СЏ СЃС‚РµРїРµРЅСЊ
+	private String country; // РЎС‚СЂР°РЅР°
 
 	
 
@@ -83,7 +83,7 @@ public class Participant {
 
 	@Override
 	public String toString() {
-		return "ИД участника: " + id + "\n Возраст " + age + "\n ФИО: " + fullName + "\n Тип участника" + participantType 
-				+ "\n Научная степень" + degree + "\n Страна" + country; 
+		return "РР” СѓС‡Р°СЃС‚РЅРёРєР°: " + id + "\n Р’РѕР·СЂР°СЃС‚ " + age + "\n Р¤РРћ: " + fullName + "\n РўРёРї СѓС‡Р°СЃС‚РЅРёРєР°" + participantType 
+				+ "\n РќР°СѓС‡РЅР°СЏ СЃС‚РµРїРµРЅСЊ" + degree + "\n РЎС‚СЂР°РЅР°" + country; 
 	}
 }

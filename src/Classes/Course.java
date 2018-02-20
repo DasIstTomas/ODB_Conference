@@ -1,12 +1,12 @@
-package Classes;
+п»їpackage Classes;
 
 import java.util.Date;
 
 public class Course{
 	//Violation
-	int id; // Ид курса
-	String courseName; // название курса
-	String date; // Дата проведения
+	int id; // РРґ РєСѓСЂСЃР°
+	String courseName; // РЅР°Р·РІР°РЅРёРµ РєСѓСЂСЃР°
+	String date; // Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ
 	String startTime;
 	String endTime;
 
@@ -77,7 +77,7 @@ public class Course{
 
 	@Override
 	public String toString() {
-		return "Название научного направления: " + courseName + "\n Дата проведения: " + date;
+		return "РќР°Р·РІР°РЅРёРµ РЅР°СѓС‡РЅРѕРіРѕ РЅР°РїСЂР°РІР»РµРЅРёСЏ: " + courseName + "\n Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ: " + date;
 	}
 }
 

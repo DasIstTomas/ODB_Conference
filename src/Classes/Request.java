@@ -1,4 +1,4 @@
-package Classes;
+п»їpackage Classes;
 
 import java.util.Date;
 
@@ -8,9 +8,9 @@ public class Request {
 	private String fullName;
 	String participantType;
 	private String degree;
-	/**Дата рассылки*/
+	/**Р”Р°С‚Р° СЂР°СЃСЃС‹Р»РєРё*/
 	private String date;
-	/**Дата подачи заявки участником*/
+	/**Р”Р°С‚Р° РїРѕРґР°С‡Рё Р·Р°СЏРІРєРё СѓС‡Р°СЃС‚РЅРёРєРѕРј*/
 	private String dateOfBidFiling;
 	private String courseName;
 	
@@ -75,7 +75,7 @@ public class Request {
 
 	@Override
 	public String toString() {
-		return "ИД заявки " + id + "\n Имя участника " + fullName + "\n Тип участия" + participantType + "\n Научная степень " + degree +
-				"\n Дата проведения " + date + "\n Название курса " + courseName;
+		return "РР” Р·Р°СЏРІРєРё " + id + "\n РРјСЏ СѓС‡Р°СЃС‚РЅРёРєР° " + fullName + "\n РўРёРї СѓС‡Р°СЃС‚РёСЏ" + participantType + "\n РќР°СѓС‡РЅР°СЏ СЃС‚РµРїРµРЅСЊ " + degree +
+				"\n Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ " + date + "\n РќР°Р·РІР°РЅРёРµ РєСѓСЂСЃР° " + courseName;
 	}
 }

@@ -1,9 +1,9 @@
-package Classes;
+п»їpackage Classes;
 
 public class Audience {
 	//Driver
-	private int number; // номер аудитории
-	private String name; // наименование универа
+	private int number; // РЅРѕРјРµСЂ Р°СѓРґРёС‚РѕСЂРёРё
+	private String name; // РЅР°РёРјРµРЅРѕРІР°РЅРёРµ СѓРЅРёРІРµСЂР°
 
 	public Audience(int number, String name) {
 		this.number = number;
@@ -29,6 +29,6 @@ public class Audience {
 
 	@Override
 	public String toString() {
-		return "Номер аудитории " + number + "\n Университет " + name;
+		return "РќРѕРјРµСЂ Р°СѓРґРёС‚РѕСЂРёРё " + number + "\n РЈРЅРёРІРµСЂСЃРёС‚РµС‚ " + name;
 	}
 }

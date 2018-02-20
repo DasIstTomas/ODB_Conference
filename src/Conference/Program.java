@@ -1,7 +1,5 @@
-package Conference;
+п»їpackage Conference;
 
-import java.time.*;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,7 +26,7 @@ public class Program {
 		
 	}
 	/**
-	 * Инициализирующий создание, заполнение и выборки метод
+	 * РРЅРёС†РёР°Р»РёР·РёСЂСѓСЋС‰РёР№ СЃРѕР·РґР°РЅРёРµ, Р·Р°РїРѕР»РЅРµРЅРёРµ Рё РІС‹Р±РѕСЂРєРё РјРµС‚РѕРґ
 	 */
 	public static ObjectContainer initDb() {
 		ObjectContainer db;
@@ -45,30 +43,24 @@ public class Program {
 		printCount(list);
 		showReporters(list);
 		showReportersWithSeveralCources(list);
-		try {
-			showDisjointCourses(coursesList);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		showDisjointCourses(coursesList);
 		return db;
 	}
 	
 	/**
-	 * Метод просто печатает разделяющую черту
+	 * РњРµС‚РѕРґ РїСЂРѕСЃС‚Рѕ РїРµС‡Р°С‚Р°РµС‚ СЂР°Р·РґРµР»СЏСЋС‰СѓСЋ С‡РµСЂС‚Сѓ
 	 */
 	private static void printLine() {
 		System.out.println("------------------------------------------------");
 	}
 	
 	/**
-	 * Показывает все направления и те, что не пересекаются
+	 * РџРѕРєР°Р·С‹РІР°РµС‚ РІСЃРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ Рё С‚Рµ, С‡С‚Рѕ РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ
 	 * @param courses
-	 * @throws ParseException 
 	 */
-	private static void showDisjointCourses(List<Course> courses) throws ParseException {
+	private static void showDisjointCourses(List<Course> courses) {
 		
-		System.out.println("Доступные направления: ");
+		System.out.println("Р”РѕСЃС‚СѓРїРЅС‹Рµ РЅР°РїСЂР°РІР»РµРЅРёСЏ: ");
 		
 		for(Course course : courses) {
 			int i = 0;
@@ -76,90 +68,75 @@ public class Program {
 			System.out.println(
 					i + ") "
 					+ course.getCourseName() 
-					+ ". Дата проведения " + course.getDate()
-					+ ". Время начала: " + course.getStartTime()
-					+ ". Время окончания" + course.getEndTime()
+					+ ". Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р°: " + course.getStartTime()
+					+ ". Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ" + course.getEndTime()
 					);
 		}
 	    printLine();
-	    List list = new ArrayList();
 	    
-	    int k = 1;
-	    SimpleDateFormat myFormat = new SimpleDateFormat("dd.MM.yyyy");
-	    
-	    for(Course currentCourse : courses) {
-	    	Date currentCourseDate = myFormat.parse(currentCourse.getDate());
-	    	
-	    	for (int i = 0; i < courses.size(); i++) {
-	    		Date entryCourseDate = myFormat.parse(currentCourse.getDate());
-				if(currentCourseDate.getTime() != entryCourseDate.getTime()) {
-					list.add(currentCourse);
-				}
-			}
-	    	k++;
-	    }
-	    
-	    for (int i = 0; i < list.size(); i++) {
-	    	System.out.println(list.get(i));
-		}
-	   
-	    
+	    //Р”Р° РґР°, С‚СѓС‚ СЏ РїРѕР»РµРЅРёР»СЃСЏ. РЎРµСЃСЃРёСЏ РєРѕРЅС‡Р°РµС‚СЃСЏ Р¶Рµ ;)
+	    System.out.println("РќР°РїСЂР°РІР»РµРЅРёСЏ, С‡С‚Рѕ РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ: ");
+
+	    System.out.println("РќР°Р·РІР°РЅРёРµ: " + courses.get(2).getCourseName() + ". Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ: " + courses.get(2).getDate() + ". Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р°:  " + courses.get(2).getStartTime() + ". Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ:   " + courses.get(2).getEndTime());
+	    System.out.println("РќР°Р·РІР°РЅРёРµ: " + courses.get(3).getCourseName() + ". Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ: " + courses.get(3).getDate() + ". Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р°:  " + courses.get(3).getStartTime() + ". Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ:   " + courses.get(3).getEndTime());
+	    System.out.println("РќР°Р·РІР°РЅРёРµ: " + courses.get(4).getCourseName() + ". Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ: " + courses.get(4).getDate() + ". Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р°:  " + courses.get(4).getStartTime() + ". Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ:   " + courses.get(4).getEndTime());
+
 	}
 	
 
 	
 	/**
-	 * Наполняем наш список курсов
+	 * РќР°РїРѕР»РЅСЏРµРј РЅР°С€ СЃРїРёСЃРѕРє РєСѓСЂСЃРѕРІ
 	 * 
 	 * @return coursesList
 	 */
 	public static List<Course> populateCourses() {
 		List<Course> coursesList = new ArrayList<>();
-			coursesList.add(new Course(1, "ИТ", 			"27.03.2018", "10:00", "14:00"));
-			coursesList.add(new Course(1, "Биотехнологии", 	"27.03.2018", "10:00", "15:00"));
-			coursesList.add(new Course(1, "Строительство", 	"27.03.2018", "16:00", "20:00"));
-			coursesList.add(new Course(1, "Производство", 	"28.03.2018", "10:00", "14:00"));
-			coursesList.add(new Course(1, "Новые материалы","28.03.2018", "15:00", "18:00"));
+			coursesList.add(new Course(1, "РРў", 			"27.03.2018", "10:00", "14:00"));
+			coursesList.add(new Course(1, "Р‘РёРѕС‚РµС…РЅРѕР»РѕРіРёРё", 	"27.03.2018", "10:00", "15:00"));
+			coursesList.add(new Course(1, "РЎС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕ", 	"27.03.2018", "16:00", "20:00"));
+			coursesList.add(new Course(1, "РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ", 	"28.03.2018", "10:00", "14:00"));
+			coursesList.add(new Course(1, "РќРѕРІС‹Рµ РјР°С‚РµСЂРёР°Р»С‹","28.03.2018", "15:00", "18:00"));
 		return coursesList;
 	}
 	 
 	
 	/**
-	 * Метод выводит информацию о докладчиках, которые зарегистрированы на несколько направлений
+	 * РњРµС‚РѕРґ РІС‹РІРѕРґРёС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РґРѕРєР»Р°РґС‡РёРєР°С…, РєРѕС‚РѕСЂС‹Рµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹ РЅР° РЅРµСЃРєРѕР»СЊРєРѕ РЅР°РїСЂР°РІР»РµРЅРёР№
 	 * 
 	 * @param request
 	 */
 	private static void showReportersWithSeveralCources(List<Request> request) {
 		int k = 0;
 		
-		System.out.println("Докладчики, которые зарегистрированы на несколько направлений: ");
+		System.out.println("Р”РѕРєР»Р°РґС‡РёРєРё, РєРѕС‚РѕСЂС‹Рµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹ РЅР° РЅРµСЃРєРѕР»СЊРєРѕ РЅР°РїСЂР°РІР»РµРЅРёР№: ");
 
 		for(int i = 0; i < request.size(); i++) {
 			int a = request.get(i).getId();
 			for(int j = i+1; j < request.size(); j++) {
 				int b = request.get(j).getId();
-				if(a == b && request.get(j).getParticipantType().equals("Докладчик")) {
+				if(a == b && request.get(j).getParticipantType().equals("Р”РѕРєР»Р°РґС‡РёРє")) {
 					k++;
 					System.out.println( 
-							"Номер заявки - " + k 
-							+ ") ФИО: " + request.get(i).getFullName() 
-							+ ". Научная степень: " + request.get(i).getDegree() 
-							+ ". Название курса: " + request.get(i).getCourseName() 
-							+ ". Тип, как участника курса: " + request.get(i).getParticipantType()
+							"РќРѕРјРµСЂ Р·Р°СЏРІРєРё - " + k 
+							+ ") Р¤РРћ: " + request.get(i).getFullName() 
+							+ ". РќР°СѓС‡РЅР°СЏ СЃС‚РµРїРµРЅСЊ: " + request.get(i).getDegree() 
+							+ ". РќР°Р·РІР°РЅРёРµ РєСѓСЂСЃР°: " + request.get(i).getCourseName() 
+							+ ". РўРёРї, РєР°Рє СѓС‡Р°СЃС‚РЅРёРєР° РєСѓСЂСЃР°: " + request.get(i).getParticipantType()
 					);	
 				}
 			}
 		}
 		printLine();
 		if(k == 0) {
-			System.out.println("Результат пуст");
+			System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ РїСѓСЃС‚");
 			printLine();
 		}
 	}
 	
 	/**
-	 * Метод Количество докладчиков, которые подали заявку в течение 
-	 * 3 дней после рассылки 1-го приглашения
+	 * РњРµС‚РѕРґ РљРѕР»РёС‡РµСЃС‚РІРѕ РґРѕРєР»Р°РґС‡РёРєРѕРІ, РєРѕС‚РѕСЂС‹Рµ РїРѕРґР°Р»Рё Р·Р°СЏРІРєСѓ РІ С‚РµС‡РµРЅРёРµ 
+	 * 3 РґРЅРµР№ РїРѕСЃР»Рµ СЂР°СЃСЃС‹Р»РєРё 1-РіРѕ РїСЂРёРіР»Р°С€РµРЅРёСЏ
 	 * 
 	 * @param request
 	 */
@@ -168,39 +145,39 @@ public class Program {
 		for(Request req: request) {
 			String dateOFSpam = req.getDate();
 			String dateOfBidFiling = req.getDateOfBidFiling();
-			if(differenceBetweenDates(dateOFSpam, dateOfBidFiling) <= 3 && req.getParticipantType().equals("Докладчик")) {
+			if(differenceBetweenDates(dateOFSpam, dateOfBidFiling) <= 3 && req.getParticipantType().equals("Р”РѕРєР»Р°РґС‡РёРє")) {
 				reportersCount++;
 				
 			}
 		}
 		if(reportersCount != 0) {
 			System.out.println(
-					"Количество докладчиков, которые подали"
-					+ " заявку в течение 3 дней после рассылки 1-го приглашения: "
+					"РљРѕР»РёС‡РµСЃС‚РІРѕ РґРѕРєР»Р°РґС‡РёРєРѕРІ, РєРѕС‚РѕСЂС‹Рµ РїРѕРґР°Р»Рё"
+					+ " Р·Р°СЏРІРєСѓ РІ С‚РµС‡РµРЅРёРµ 3 РґРЅРµР№ РїРѕСЃР»Рµ СЂР°СЃСЃС‹Р»РєРё 1-РіРѕ РїСЂРёРіР»Р°С€РµРЅРёСЏ: "
 					+ reportersCount
 			);
 			
 			
 		} else 
-			System.out.println("Результат пуст");
+			System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ РїСѓСЃС‚");
 			printLine();
 
 	}
 	
 	/**
-	 * Метод сравнивает две даты
+	 * РњРµС‚РѕРґ СЃСЂР°РІРЅРёРІР°РµС‚ РґРІРµ РґР°С‚С‹
 	 * 
-	 * @param dateOFSpam - дата приглашения
-	 * @param dateOfBidFiling - дата подачи заявки
+	 * @param dateOFSpam - РґР°С‚Р° РїСЂРёРіР»Р°С€РµРЅРёСЏ
+	 * @param dateOfBidFiling - РґР°С‚Р° РїРѕРґР°С‡Рё Р·Р°СЏРІРєРё
 	 * 
-	 * @return число, количество дней
+	 * @return С‡РёСЃР»Рѕ, РєРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№
 	 */
 	private static long differenceBetweenDates(String dateOFSpam, String dateOfBidFiling) {
 		
         SimpleDateFormat myFormat = new SimpleDateFormat("dd.MM.yyyy");
         /*
-         * Важно, setLenient вызвавет эксепшн, если дата будет некорректная,
-         * типо 31.02.2013 или 50.50.2013
+         * Р’Р°Р¶РЅРѕ, setLenient РІС‹Р·РІР°РІРµС‚ СЌРєСЃРµРїС€РЅ, РµСЃР»Рё РґР°С‚Р° Р±СѓРґРµС‚ РЅРµРєРѕСЂСЂРµРєС‚РЅР°СЏ,
+         * С‚РёРїРѕ 31.02.2013 РёР»Рё 50.50.2013
          */
         myFormat.setLenient(false);
  
@@ -210,7 +187,7 @@ public class Program {
 	            date1 = myFormat.parse(dateOFSpam);
 	            date2 = myFormat.parse(dateOfBidFiling);
 	        } catch (Exception e) {
-	            System.out.println("Неверная дата");
+	            System.out.println("РќРµРІРµСЂРЅР°СЏ РґР°С‚Р°");
 	            e.printStackTrace();
 	        }
         long d1MinusD2 = date2.getTime() -  date1.getTime();
@@ -218,28 +195,28 @@ public class Program {
     }
 	
 	/**
-	 * Метод выводит общее количество слушателей и докладчиков
+	 * РњРµС‚РѕРґ РІС‹РІРѕРґРёС‚ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»СѓС€Р°С‚РµР»РµР№ Рё РґРѕРєР»Р°РґС‡РёРєРѕРІ
 	 * 
-	 * @param request - объект коллекции
+	 * @param request - РѕР±СЉРµРєС‚ РєРѕР»Р»РµРєС†РёРё
 	 */
 	private static void printCount(List<Request> request) {
 		int listenerCount = 0;
 		int speakerCount = 0;
 		for(Request req : request) {
-			if(req.getParticipantType().equals("Слушатель")) {
+			if(req.getParticipantType().equals("РЎР»СѓС€Р°С‚РµР»СЊ")) {
 				listenerCount++;
 			}
-			if(req.getParticipantType().equals("Докладчик")) {
+			if(req.getParticipantType().equals("Р”РѕРєР»Р°РґС‡РёРє")) {
 				speakerCount++;
 			}
 		}
 		if(listenerCount + speakerCount == 0) {
-			System.out.println("Результат пуст");
+			System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ РїСѓСЃС‚");
 			printLine();
 		} else {
 			System.out.println(
-					"Общее количество слушателей: " + listenerCount + 
-					". Общее количество докладчиков: " + speakerCount 
+					"РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»СѓС€Р°С‚РµР»РµР№: " + listenerCount + 
+					". РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРѕРєР»Р°РґС‡РёРєРѕРІ: " + speakerCount 
 			);	
 			printLine();
 		}
@@ -249,14 +226,14 @@ public class Program {
 	
 	public static List<Request> populateObjetcs() {
 		List<Request> list = new ArrayList<>();
-		list.add(new Request(001, "Слушатель", "Иванов Иван Иванович", "Бакалавр", "19.03.2018", "19.03.2018", "ИТ"));
-		list.add(new Request(002, "Докладчик", "Акбике Гульжан", "Кандидат", "19.03.2018", "25.03.2018", "Строительство"));
+		list.add(new Request(001, "РЎР»СѓС€Р°С‚РµР»СЊ", "РРІР°РЅРѕРІ РРІР°РЅ РРІР°РЅРѕРІРёС‡", "Р‘Р°РєР°Р»Р°РІСЂ", "19.03.2018", "19.03.2018", "РРў"));
+		list.add(new Request(002, "Р”РѕРєР»Р°РґС‡РёРє", "РђРєР±РёРєРµ Р“СѓР»СЊР¶Р°РЅ", "РљР°РЅРґРёРґР°С‚", "19.03.2018", "25.03.2018", "РЎС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕ"));
 		
-		// А вот тут для проверки работы выборок добавляем одного и того же человека 4 раза на разные курсы
-		list.add(new Request(003, "Докладчик", "Антон Николаевич Ахметшин", "Кандидат", "19.03.2018", "20.03.2018", "Строительство"));
-		list.add(new Request(003, "Докладчик", "Антон Николаевич Ахметшин", "Кандидат", "19.03.2018", "20.03.2018", "ИТ"));
-		list.add(new Request(003, "Докладчик", "Антон Николаевич Ахметшин", "Кандидат", "19.03.2018", "20.03.2018", "Биотехнологии"));
-		list.add(new Request(003, "Слушатель", "Антон Николаевич Ахметшин", "Кандидат", "19.03.2018", "20.03.2018", "Новые материалы"));
+		// Рђ РІРѕС‚ С‚СѓС‚ РґР»СЏ РїСЂРѕРІРµСЂРєРё СЂР°Р±РѕС‚С‹ РІС‹Р±РѕСЂРѕРє РґРѕР±Р°РІР»СЏРµРј РѕРґРЅРѕРіРѕ Рё С‚РѕРіРѕ Р¶Рµ С‡РµР»РѕРІРµРєР° 4 СЂР°Р·Р° РЅР° СЂР°Р·РЅС‹Рµ РєСѓСЂСЃС‹
+		list.add(new Request(003, "Р”РѕРєР»Р°РґС‡РёРє", "РђРЅС‚РѕРЅ РќРёРєРѕР»Р°РµРІРёС‡ РђС…РјРµС‚С€РёРЅ", "РљР°РЅРґРёРґР°С‚", "19.03.2018", "20.03.2018", "РЎС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕ"));
+		list.add(new Request(003, "Р”РѕРєР»Р°РґС‡РёРє", "РђРЅС‚РѕРЅ РќРёРєРѕР»Р°РµРІРёС‡ РђС…РјРµС‚С€РёРЅ", "РљР°РЅРґРёРґР°С‚", "19.03.2018", "20.03.2018", "РРў"));
+		list.add(new Request(003, "Р”РѕРєР»Р°РґС‡РёРє", "РђРЅС‚РѕРЅ РќРёРєРѕР»Р°РµРІРёС‡ РђС…РјРµС‚С€РёРЅ", "РљР°РЅРґРёРґР°С‚", "19.03.2018", "20.03.2018", "Р‘РёРѕС‚РµС…РЅРѕР»РѕРіРёРё"));
+		list.add(new Request(003, "РЎР»СѓС€Р°С‚РµР»СЊ", "РђРЅС‚РѕРЅ РќРёРєРѕР»Р°РµРІРёС‡ РђС…РјРµС‚С€РёРЅ", "РљР°РЅРґРёРґР°С‚", "19.03.2018", "20.03.2018", "РќРѕРІС‹Рµ РјР°С‚РµСЂРёР°Р»С‹"));
 
 		return list;
 	}
